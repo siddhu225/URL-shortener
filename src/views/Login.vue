@@ -78,7 +78,6 @@ export default defineComponent({
           email: profile.getEmail(),
           password: profile.getId()
         });
-        console.log(result)
         if (result) {
           toast.success('logged in succesfully');
           const { token } = result;

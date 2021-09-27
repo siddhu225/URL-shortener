@@ -88,7 +88,6 @@ export default defineComponent({
           localStorage.setItem('auth-token', token);
           router.push({ name: 'Home'});
         }
-        console.log('result', result);
       } catch (e) {
         console.error('error', e);
         toast.error('user already exists');
@@ -120,7 +119,6 @@ export default defineComponent({
           localStorage.setItem('auth-token', token);
           router.push({ name: 'Home'});
         }
-        console.log('result', result);
       } catch (e) {
         console.error('error', e);
         toast.error('user already exists');

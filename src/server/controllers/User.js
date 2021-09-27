@@ -23,7 +23,6 @@ Router.post('/signup', async (req,res,next) => {
 
 Router.post('/login', async (req, res, next) => {
     try {
-        console.log('req----------------', req.body, req.query, req.params);
         const { email, password } = req.body;
         const user = await User.findOne({ email })
         if (user === null) {

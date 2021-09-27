@@ -15,11 +15,14 @@ app.use(bodyParser.json());
 app.use(userRouter);
 app.use(urlRouter);
 
+app.get('/', (req, res) => {
+  res.send('hllllllllllllllllllll')
+})
+
 app.get('/:url', async (req, res) => {
   const { url } = req.params;
   try {
     Url.findOne({ urlCode: url}).then((data) => {
-      console.log('aaaaaaaaaaaaaa', data);
       if (!data) { return res.redirect('/') }
       res.redirect(data.longUrl);
     })

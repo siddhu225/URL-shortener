@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const shortid = require('shortid');
 
 const userSchema = new mongoose.Schema({
   email: {
@@ -25,6 +26,7 @@ const userSchema = new mongoose.Schema({
 
 userSchema.pre('save', async function (next) {
   const user = this;
+  if (user.isNew) user.apikey = shortid.generate();
   if (user.isModified('password')){
     user.password = await bcrypt.hash(user.password, 8);
   }

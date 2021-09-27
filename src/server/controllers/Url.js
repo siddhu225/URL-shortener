@@ -4,9 +4,10 @@ const Url = require('../models/Url');
 const validUrl = require('valid-url');
 const shortid = require('shortid');
 const baseUrl = 'http://localhost:8081';
+const auth = require('../middleware/auth');
 
 
-Router.post('/shorten', async (req, res) => {
+Router.post('/shorten', auth,  async (req, res) => {
   const { longUrl } = req.body;
 
   if (!validUrl.isUri(baseUrl)) {

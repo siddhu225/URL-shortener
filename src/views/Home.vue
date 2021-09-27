@@ -77,6 +77,7 @@ export default defineComponent({
         }
       } catch (e) {
         console.log('error', e);
+        toast.error(e.data.error || 'error while shortening');
       }
     }
     function copyURl() {

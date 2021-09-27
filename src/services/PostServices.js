@@ -5,7 +5,6 @@ export default {
     return Api().post('/login',user)
   },
   signup(params) {
-    console.log('req----------',params);
     return Api().post('/signup', params)
   },
   shorten(params) {

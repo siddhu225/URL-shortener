@@ -17,4 +17,8 @@ This is a ur shortener system made in Vue.js, the following technologies were us
 npm install
 ```
 
+## Demo video link of above project
+```
+https://drive.google.com/file/d/15sKTXa-VaFCvN8bUTL9u8roQyn4lX08V/view?usp=sharing```
+
 
